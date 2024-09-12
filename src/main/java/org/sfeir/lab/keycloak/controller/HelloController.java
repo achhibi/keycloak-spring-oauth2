@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.sfeir.lab.keycloak.config.SecurityConfig.ADMIN;
+import static org.sfeir.lab.keycloak.config.SecurityConfig.USER;
+
 @RestController
 @RequestMapping("/api")
 public class HelloController {
@@ -22,14 +25,14 @@ public class HelloController {
         return "Hello (%s)".formatted(helloService.getAuthenticatedName());
     }
 
-    @RolesAllowed("admin")
-    @GetMapping("admin")
+    @RolesAllowed(ADMIN)
+    @GetMapping(ADMIN)
     public String sayHelloToAdmin(JwtAuthenticationToken auth) {
         return "Hello %s (%s)".formatted(getUserName(auth), helloService.getAuthenticatedName());
     }
 
-    @GetMapping("user")
-    @RolesAllowed("user")
+    @GetMapping(USER)
+    @RolesAllowed(USER)
     public String sayHelloToUser(JwtAuthenticationToken auth) {
         return "Hello %s (%s)".formatted(getUserName(auth), helloService.getAuthenticatedName());
     }
