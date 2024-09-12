@@ -1,7 +1,15 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Description 
 
-* The original package name 'org.sfeir.lab.keycloak-lab' is invalid and this project uses 'org.sfeir.lab.keycloak' instead.
+```
+This Spring Boot project demonstrates Keycloak integration for robust authentication and authorization management. It features:
+
+- Keycloak configuration with Spring Security
+- Secured REST endpoints with varied access levels
+- Role and permission management
+- Sample OAuth 2.0 / OpenID Connect authentication flow
+
+Ideal for understanding the basics of securing Spring Boot applications with Keycloak.
+```
 
 # Getting Started
 
